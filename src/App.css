@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+}
+
+.header {
+  border: 3px solid black;
+
+  margin-bottom: 10px;
+
+}
+
+.navbar {
+  border: 3px solid rgb(191, 21, 21);
+  padding: 3px;
+  margin: 5px
+
+}
+
+.article-list {
+  border: 3px solid rgb(30, 58, 137);
+  padding: 3px;
+  margin: 5px
+
+}
