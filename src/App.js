@@ -1,5 +1,5 @@
 // import { useState } from 'react';
-// import { Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import './App.css';
 import Header from './components/header'
 import Navbar from './components/navbar';
@@ -12,6 +12,9 @@ function App() {
     <div className="App">
      <Header/>
      <Navbar/>
+     <Routes>
+      <Route path="/" element= {<ArticleList/>}/>
+     </Routes>
      <ArticleList/>
     </div>
   );
