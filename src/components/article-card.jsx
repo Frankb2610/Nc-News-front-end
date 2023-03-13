@@ -5,7 +5,7 @@ function ArticleCard(props) {
 			{articles.map((article) => {
 				return (
 					
-						<li key={article.item_id}>
+						<li key={article.article_id}>
 							<h4>{article.title}</h4>
 							<p>{article.topic}</p>
 							

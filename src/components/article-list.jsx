@@ -20,7 +20,7 @@ function ArticleList() {
         })
       }, []) 
 
-      console.log(articles, "articles")
+    
       
     return (
     <section className="article-list">
