@@ -25,12 +25,14 @@ function ArticleList() {
       
     return (
     <section className="article-list">
-        <h3>articlessss</h3>
-        <ul>
+        <h3>articles</h3>
+       {isLoading ? (<p>isLoading...</p>) :  
+       (<ul>
         <ArticleCard 
                 articles={articles}
                 />
-        </ul>
+        </ul>) }
+        
     </section>
     )
 }
