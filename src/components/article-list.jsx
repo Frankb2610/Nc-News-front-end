@@ -15,6 +15,7 @@ function ArticleList() {
         getArticles().then((articleData)=> {
             
           setArticles(articleData)
+          
          
           setIsLoading(false)
         })
