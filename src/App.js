@@ -18,7 +18,7 @@ function App() {
      <Navbar/>
      <Routes>
       <Route path="/" element= {<ArticleList articles={articles} setArticles={setArticles} isLoading={isLoading} setIsLoading={setIsLoading} />}/>
-      <Route path="/articles/:article_id" element = {<FullArticleCard setIsLoading={setIsLoading}/>}/>
+      <Route path="/articles/:article_id" element = {<FullArticleCard isLoading = {isLoading} setIsLoading={setIsLoading}/>}/>
      </Routes>
     </div>
   );

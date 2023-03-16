@@ -22,3 +22,11 @@ export const fetchSingleArticle = (article_id) => {
         console.error(err);
       });
   };
+
+  export const fetchCommentsById = (article_id) => {
+    return newsApi.get(`/reviews/${article_id}/comments`).then(({data})=>{
+      return data.comments
+    }).catch((err)=>{
+      console.error(err)
+    })
+    }

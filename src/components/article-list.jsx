@@ -25,7 +25,7 @@ const {articles, setArticles, isLoading, setIsLoading} = props
       
     return (
     <section className="article-list">
-        <h3>articles</h3>
+        <h4>articles</h4>
        {
        isLoading ? (<p>isLoading...</p>) :  
        (<ul>
