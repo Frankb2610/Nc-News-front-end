@@ -1,14 +1,15 @@
-import { useEffect, useState } from "react";
-import { getArticles } from "../utils.js/API";
+import {useState, useEffect} from "react";
+import { getArticles } from "../utils/API.js";
+
 import ArticleCard from "./article-card";
 
 
 
 
-function ArticleList() {
+function ArticleList(props) {
 
-    const [articles, setArticles] = useState([])
-    const [isLoading, setIsLoading] =useState(true)
+const {articles, setArticles} = props
+const [isLoading, setIsLoading] = useState(true)
     
     useEffect(() => {
         setIsLoading(true);
@@ -19,19 +20,26 @@ function ArticleList() {
          
           setIsLoading(false)
         })
-      }, []) 
+      }, [setArticles, setIsLoading]) 
 
     
       
     return (
-    <section className="article-list">
-        <h3>articles</h3>
-       {isLoading ? (<p>isLoading...</p>) :  
-       (<ul>
-        <ArticleCard 
-                articles={articles}
-                />
-        </ul>) }
+    <section >
+        <h4>articles</h4>
+       {
+       isLoading ? (<p>isLoading...</p>) :  
+       (<ul className="article-list">
+        {articles.map((article) => {
+          return (
+           <ArticleCard 
+           key = {article.article_id}
+           article = {article}
+           />
+          );
+			  })}
+      </ul>) 
+      }
         
     </section>
     )

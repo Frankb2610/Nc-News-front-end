@@ -22,3 +22,29 @@
   margin: 5px
 
 }
+
+.article-card {
+  border: 3px solid rgb(30, 58, 137);
+  padding: 3px;
+  margin: 5px
+
+}
+
+.comment-card {
+  border: 3px solid rgb(30, 58, 137);
+  padding: 3px;
+  margin: 5px
+
+}
+
+.comment-list {
+  list-style: none;
+}
+
+.article-list {
+  list-style: none;
+}
+
+.article-info {
+  list-style: none;
+}
