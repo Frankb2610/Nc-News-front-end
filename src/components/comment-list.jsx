@@ -26,7 +26,7 @@ function CommentList() {
         return (
         <section >
           
-           (<ul className="comment-list">
+           <ul className="comment-list">
             {comments.map((comment) => {
               return (
                <CommentCard 
@@ -35,7 +35,8 @@ function CommentList() {
                />
               );
                   })}
-          </ul>) 
+          </ul>
+
           
             
         </section>
