@@ -32,6 +32,7 @@ function CommentList() {
                <CommentCard 
                key = {comment.comment_id}
                comment = {comment}
+             
                />
               );
                   })}

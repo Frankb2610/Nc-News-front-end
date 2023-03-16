@@ -2,7 +2,9 @@
 function CommentCard(props) {
    const {comment} = props;
    
-
+   const handleClick = (event) => {
+        console.log(`voted for article ${comment.comment_id}`)
+    }
    
 
    
@@ -12,8 +14,10 @@ function CommentCard(props) {
 			
 		<h4>{comment.author}</h4>
 		<p>{comment.body}</p>
+        <p>Posted: {comment.created_at}</p>
         <footer>
-            <p>Posted: {comment.created_at}</p>
+         
+             <button onClick ={handleClick} >vote</button>
             <p>Votes: {comment.votes}</p>
         </footer>
 		
