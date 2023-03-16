@@ -15,32 +15,42 @@ function CommentList() {
         useEffect(() => {
          
             fetchCommentsById(article_id).then((commentData)=> {
-               console.log(commentData)
+              
               setComments(commentData)
             
             })
           }, [article_id]) 
     
         
-          
-        return (
-        <section >
-          
-           <ul className="comment-list">
-            {comments.map((comment) => {
-              return (
-               <CommentCard 
-               key = {comment.comment_id}
-               comment = {comment}
-               />
-              );
-                  })}
-          </ul>
+        if(!comments.length) {
+          return (
+            <section>
+              <h6>comments</h6>
+              <p>no comments</p>
+            </section>
 
-          
-            
-        </section>
-        )
+          )
+        } else {
+          return (
+            <section >
+              
+               <ul className="comment-list">
+                {comments.map((comment) => {
+                  return (
+                   <CommentCard 
+                   key = {comment.comment_id}
+                   comment = {comment}
+                   />
+                  );
+                      })}
+              </ul>
+    
+              
+                
+            </section>
+            )
+        }
+   
     }
     
     export default CommentList;
