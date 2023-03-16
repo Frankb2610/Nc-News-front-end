@@ -15,7 +15,6 @@ export const getArticles = () => {
 
 export const fetchSingleArticle = (article_id) => {
     return newsApi.get('/articles/' + article_id).then(({data})=>{
-      console.log(data)
         return data
     })
       .catch((err) => {
@@ -24,8 +23,9 @@ export const fetchSingleArticle = (article_id) => {
   };
 
   export const fetchCommentsById = (article_id) => {
-    return newsApi.get(`/reviews/${article_id}/comments`).then(({data})=>{
-      return data.comments
+    return newsApi.get(`/articles/${article_id}/comments`).then(({data})=>{
+     
+      return data
     }).catch((err)=>{
       console.error(err)
     })

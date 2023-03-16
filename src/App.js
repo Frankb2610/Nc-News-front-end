@@ -7,9 +7,11 @@ import ArticleList from './components/article-list'
 import FullArticleCard from './components/full-article-card'
 
 
+
 function App() {
   const [articles, setArticles] = useState([])
-  const [isLoading, setIsLoading] =useState(true)
+
+
 
   
   return (
@@ -17,8 +19,8 @@ function App() {
      <Header/>
      <Navbar/>
      <Routes>
-      <Route path="/" element= {<ArticleList articles={articles} setArticles={setArticles} isLoading={isLoading} setIsLoading={setIsLoading} />}/>
-      <Route path="/articles/:article_id" element = {<FullArticleCard isLoading = {isLoading} setIsLoading={setIsLoading}/>}/>
+      <Route path="/" element= {<ArticleList articles={articles} setArticles={setArticles} />}/>
+      <Route path="/articles/:article_id" element = {<FullArticleCard />}/>
      </Routes>
     </div>
   );

@@ -1,24 +1,32 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchSingleArticle } from "../utils/API";
-import { Link } from "react-router-dom";
+import CommentList from "./comment-list";
 
-function FullArticleCard(props) {
+
+function FullArticleCard() {
     
-    const {isLoading, setIsLoading} = props
-    const { article_id } = useParams();
-    console.log(article_id)
-    const [singleArticle, setSingleArticle] = useState({});
+  const [isLoading, setIsLoading] = useState(true)
+  const [singleArticle, setSingleArticle] = useState({});
+  const { article_id } = useParams();
+   
+   
+    
     useEffect(() => {
       setIsLoading(true);
       fetchSingleArticle(article_id).then((article) => {
-        console.log(article)
+        
         setSingleArticle(article);
         setIsLoading(false);
       });
-    }, []);
+    }, [article_id]);
 
-    console.log(singleArticle.article_img_url)
+
+
+
+  
+ 
+  
    
   
     const renderArticle= (singleArticle) => {
@@ -36,11 +44,17 @@ function FullArticleCard(props) {
             <li>Written {singleArticle.created_at}</li>
             <li>Number of Votes: {singleArticle.votes}</li>
           </ul>
+          <h6>Comments</h6>
+        <CommentList/>
+                 
        </section>
-       <footer>
-        <button> <Link to={'/comments'}>Read Comments</Link></button>
-        
-       </footer>
+      
+       
+
+     
+    
+    
+     
         </div>
       
      
