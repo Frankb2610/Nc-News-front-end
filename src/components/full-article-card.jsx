@@ -37,10 +37,7 @@ function FullArticleCard() {
   
         
       }
-   console.log(singleArticle.votes, "SINGLE")
-   console.log(userVote, "USER")
-   console.log(singleArticle)
-
+  
 
 
   
