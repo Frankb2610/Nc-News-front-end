@@ -30,3 +30,5 @@ export const fetchSingleArticle = (article_id) => {
       console.error(err)
     })
     }
+
+   
