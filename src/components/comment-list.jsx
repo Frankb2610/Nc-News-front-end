@@ -1,14 +1,14 @@
-import {useState, useEffect} from "react";
+import { useEffect} from "react";
 import { useParams } from "react-router-dom";
 import { fetchCommentsById } from "../utils/API";
 import CommentCard from "./Comment-Card";
 
 
-function CommentList() {
+function CommentList({comments, setComments}) {
 
     const { article_id } = useParams();
    
-    const [comments, setComments] = useState([])
+   
   
 
         
@@ -19,27 +19,32 @@ function CommentList() {
               setComments(commentData)
             
             })
-          }, [article_id]) 
+          }, [article_id, setComments]) 
     
         
-          
-        return (
-        <section >
-          
-           (<ul className="comment-list">
-            {comments.map((comment) => {
-              return (
-               <CommentCard 
-               key = {comment.comment_id}
-               comment = {comment}
-               />
-              );
-                  })}
-          </ul>) 
-          
-            
-        </section>
-        )
+        if (!comments.length) {
+          <p>No Comments</p>
+
+        } else {
+          return (
+            <section >
+              
+               <ul className="comment-list">
+                {comments.map((comment) => {
+                  return (
+                   <CommentCard 
+                   key = {comment.comment_id}
+                   comment = {comment}
+                   />
+                  );
+                      })}
+              </ul>
+              
+                
+            </section>
+            )
+        }
+      
     }
     
     export default CommentList;

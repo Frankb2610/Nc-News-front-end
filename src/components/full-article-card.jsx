@@ -11,6 +11,7 @@ function FullArticleCard() {
   const [singleArticle, setSingleArticle] = useState({});
   const [userVote, setUserVote] = useState(0)
   const [isVotingError, setIsVotingError] = useState(false)
+  const [comments, setComments] = useState([])
   
 
   const { article_id } = useParams();
@@ -60,10 +61,11 @@ function FullArticleCard() {
             <li>Written {singleArticle.created_at}</li>
             <li>Number of Votes: {singleArticle.votes + userVote}</li>
             <button onClick={handleClick} disabled={userVote !== 0}>Like</button>
+            
 
           </ul>
           <h6>Comments</h6>
-        <CommentList/>
+        <CommentList comments={comments} setComments={setComments}/>
                  
        </section>
       
