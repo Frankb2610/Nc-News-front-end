@@ -15,7 +15,7 @@ function CommentList() {
         useEffect(() => {
          
             fetchCommentsById(article_id).then((commentData)=> {
-               console.log(commentData)
+              
               setComments(commentData)
             
             })
@@ -26,17 +26,18 @@ function CommentList() {
         return (
         <section >
           
-           (<ul className="comment-list">
+           <ul className="comment-list">
             {comments.map((comment) => {
               return (
                <CommentCard 
                key = {comment.comment_id}
                comment = {comment}
+               setComments = {setComments}
              
                />
               );
                   })}
-          </ul>) 
+          </ul>
           
             
         </section>

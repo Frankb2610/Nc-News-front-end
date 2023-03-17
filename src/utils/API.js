@@ -30,3 +30,10 @@ export const fetchSingleArticle = (article_id) => {
       console.error(err)
     })
     }
+
+    export const voteForArticle = (article_id, votes) => {
+      return newsApi.patch(`/articles/${article_id}`, { inc_votes: votes }).then(({ data }) => {
+         
+        return data.article
+      })
+  }
